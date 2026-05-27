@@ -2,6 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from '@presentation/App'
 import '@presentation/styles/global.css'
+import { AppProvider } from './AppProvider'
+import { BrowserRouter } from 'react-router-dom'
 
 export function bootstrap(): void {
   const rootElement = document.getElementById('root')
@@ -12,7 +14,11 @@ export function bootstrap(): void {
 
   createRoot(rootElement).render(
     <StrictMode>
-      <App />
+      <BrowserRouter>
+        <AppProvider>
+          <App />
+        </AppProvider>
+      </BrowserRouter>
     </StrictMode>,
   )
 }

@@ -1,7 +1,6 @@
+import { AppRouter } from '@presentation/routes/AppRouter'
+import '@presentation/styles/auth.css'
+
 export default function App() {
-  return (
-    <main className="app">
-      <h1>NutriChef AI</h1>
-    </main>
-  )
+  return <AppRouter />
 }
