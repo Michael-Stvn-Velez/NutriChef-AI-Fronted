@@ -5,6 +5,10 @@ import type { LogoutUseCase } from '@application/useCases/Auth/LogoutUseCase'
 import type { RefreshTokenUseCase } from '@application/useCases/Auth/RefreshTokenUseCase'
 import type { RegisterUseCase } from '@application/useCases/Auth/RegisterUseCase'
 import type { ResetPasswordUseCase } from '@application/useCases/Auth/ResetPasswordUseCase'
+import type { CreateRecipeUseCase } from '@application/useCases/Recipe/CreateRecipeUseCase'
+import type { DeleteRecipeUseCase } from '@application/useCases/Recipe/DeleteRecipeUseCase'
+import type { GetRecipeByIdUseCase } from '@application/useCases/Recipe/GetRecipeByIdUseCase'
+import type { ListRecipesUseCase } from '@application/useCases/Recipe/ListRecipesUseCase'
 import { createContext, useContext } from 'react'
 
 export type AppContainerContextValue = {
@@ -15,6 +19,10 @@ export type AppContainerContextValue = {
   refreshTokenUseCase: RefreshTokenUseCase
   logoutUseCase: LogoutUseCase
   getAuthSessionUseCase: GetAuthSessionUseCase
+  createRecipeUseCase: CreateRecipeUseCase
+  listRecipesUseCase: ListRecipesUseCase
+  getRecipeByIdUseCase: GetRecipeByIdUseCase
+  deleteRecipeUseCase: DeleteRecipeUseCase
 }
 
 export const AppContainerContext = createContext<AppContainerContextValue | null>(null)

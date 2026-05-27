@@ -6,4 +6,8 @@ export const API_PATHS = {
     FORGOT_PASSWORD: '/auth/forgot-password',
     RESET_PASSWORD: '/auth/reset-password',
   },
+  RECIPES: {
+    BASE: '/recipes',
+    BY_ID: (recipeId: string) => `/recipes/${recipeId}`,
+  },
 } as const

@@ -1,0 +1,189 @@
+/* ── Recipe detail modal content ── */
+.recipe-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-xs) 0 var(--space-sm);
+}
+
+.recipe-detail__status {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.recipe-detail__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.recipe-detail__label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-neon);
+  text-shadow: 0 0 10px var(--color-neon-dim);
+}
+
+.recipe-detail__title {
+  margin: 0;
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  line-height: 1.35;
+  text-shadow: 0 0 18px var(--color-neon-glow);
+}
+
+.recipe-detail__divider {
+  margin: 0;
+  border: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--color-neon-glow-rgb), 0.55) 20%,
+    rgba(var(--color-neon-glow-rgb), 0.55) 80%,
+    transparent
+  );
+  box-shadow: 0 0 12px rgba(var(--color-neon-glow-rgb), 0.15);
+}
+
+.recipe-detail__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.recipe-detail__subtitle {
+  margin: 0;
+  padding-bottom: var(--space-xs);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-neon);
+  text-shadow: 0 0 10px var(--color-neon-dim);
+  border-bottom: 1px solid rgba(var(--color-neon-rgb), 0.25);
+}
+
+.recipe-detail__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.recipe-detail__list--numbered {
+  counter-reset: recipe-step;
+  gap: var(--space-md);
+}
+
+.recipe-detail__list--numbered .recipe-detail__list-item {
+  counter-increment: recipe-step;
+  position: relative;
+  padding-left: 2.25rem;
+}
+
+.recipe-detail__list--numbered .recipe-detail__list-item::before {
+  content: counter(recipe-step);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  background: rgba(var(--color-neon-rgb), 0.2);
+  border: 1px solid var(--color-neon-dim);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(var(--color-neon-glow-rgb), 0.2);
+}
+
+.recipe-detail__list--bullets .recipe-detail__list-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.5rem;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid rgba(var(--color-neon-rgb), 0.15);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.recipe-detail__list--bullets .recipe-detail__list-item::before {
+  content: '';
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-right: 0.35rem;
+  border-radius: 50%;
+  background: var(--color-neon);
+  box-shadow: 0 0 8px var(--color-neon-glow);
+  flex-shrink: 0;
+}
+
+.recipe-detail__list-item {
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.recipe-detail__item-name {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.recipe-detail__item-separator {
+  color: var(--color-neon-dim);
+}
+
+.recipe-detail__item-quantity {
+  color: var(--color-text-muted);
+}
+
+.recipe-detail__nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-sm);
+  margin: 0;
+}
+
+@media (min-width: 520px) {
+  .recipe-detail__nutrition-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.recipe-detail__nutrition-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: var(--space-md);
+  border: 1px solid rgba(var(--color-neon-rgb), 0.18);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.recipe-detail__nutrition-label {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-neon);
+}
+
+.recipe-detail__nutrition-value {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-shadow: 0 0 12px rgba(var(--color-neon-glow-rgb), 0.15);
+}
